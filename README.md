@@ -4,7 +4,7 @@
 
 Binary file: [Download](https://gitlab.com/xlebenny/SQLDataGenerator/-/jobs/artifacts/master/download?job=Release) (Require .net framework 4.5)
 
-# [Origin Repository](https://gitlab.com/xlebenny/SQLDataGenerator)
+This [repository](https://gitlab.com/xlebenny/SQLDataGenerator) clone from gitlab
 
 <br />
 A tool to generate a lot of <b>make sense</b> data for DEMO / performance test.
