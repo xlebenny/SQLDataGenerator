@@ -1,0 +1,33 @@
+# ref https://stackoverflow.com/questions/32964953/gitlab-ci-and-msbuild-with-tests 
+variables:
+  solution: SQLDataGeneratorApplication.sln
+  zipFileName: SQLDataGeneratorApplication
+  unitTestDll: SQLDataGeneratorUnitTest\bin\Release\SQLDataGeneratorUnitTest.dll
+  unitTestSettings: SQLDataGeneratorUnitTest\UnitTest.runsettings
+  releasePath: .\SQLDataGeneratorApplication\bin\Release
+
+before_script:
+  - "@ECHO OFF"
+  - call "%gitlabRunner%setupEnv.bat"
+  - "%msbuild% /v:quiet /t:Clean %solution%"
+  - "%nuget% restore -Verbosity quiet"
+  - "%msbuild% /v:quiet /t:Build /p:Configuration=Release %solution%"
+
+stages:
+  - test
+  - deploy
+
+test:
+  stage: test
+  script:
+  - "%vstest% %unitTestDll%"
+  
+Release:
+  stage: deploy
+  script:
+  - ""
+  artifacts:
+    name: "%zipFileName%"
+    paths: 
+    - "%releasePath%"
+    when: on_success

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Dictionary>
+  <Words>
+    <Recognized>
+      <Word>Param</Word>
+      <Word>Params</Word>
+      <Word>Config</Word>
+      <Word>Configs</Word>
+      <Word>x</Word>
+      <Word>Informations</Word>
+    </Recognized>
+  </Words>
+  <Acronyms>
+    <CasingExceptions>
+      <Acronym>SQL</Acronym>
+      <Acronym>sql</Acronym>
+      <Acronym>Sql</Acronym>
+    </CasingExceptions>
+  </Acronyms>
+</Dictionary>
